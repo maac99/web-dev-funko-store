@@ -13,6 +13,13 @@
 
 <body>
     <h1 class="text-center">CATÁLOGO</h1>
+    <ul>
+        <li>Carrito:</li>
+        <li *ngFor = "let carri of carritoSeleccionado">
+            <p>{{carri.producto.nombre}}: {{carri.cantidad}}  </p>
+        </li>
+        <input class="btn btn-primary" type="button" value="Comprar">
+    </ul>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 card" style="width: 18rem;" *ngFor="let funko of aFunkos">
