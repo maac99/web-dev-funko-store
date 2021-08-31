@@ -1,12 +1,12 @@
 import { Usuario } from "./usuario";
+import { Item } from "./item";
+
 
 export class Venta{
-  constructor
-(
+  constructor(
     public fecha: string,
-    public items:[],
+    public carrito: Item[],
     public usuario: Usuario,
     public totalVenta: number //Suma del valor de los items
   ){}
-
 }

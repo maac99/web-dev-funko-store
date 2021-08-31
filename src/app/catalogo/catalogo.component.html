@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
+    <title>FunkoStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel ="stylesheet" href="catalogo.component.css">
+
+</head>
+
+<body>
+    <h1 class="text-center">CATÁLOGO</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 card" style="width: 18rem;" *ngFor="let funko of aFunkos">
+                <img src={{funko.imagen}} width="100" height="250" class="card-img-top" alt={{funko.nombre}}>
+                <div class="card-body">
+                    <h5 class="card-title">{{funko.nombre}}</h5>
+                    <p class="card-text">{{funko.descripcion}}</p>
+                    <p class="card-text">Costo: $ {{funko.precio}}</p>
+                    <input class="btn btn-primary" type="button" value="Carrito" (click)="agregarItem(funko,0)">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
