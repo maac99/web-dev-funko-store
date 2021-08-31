@@ -1,16 +1,59 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <title>Administración</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+!DOCTYPE html>
 
-  </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
+    <title>FunkoStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel ="stylesheet" href="admin.component.css">
+
+</head>
+
+<body>
+    <h1 class="text-center">CATÁLOGO</h1>
+    <ul>
+        <input class="btn btn-primary" type="button" value="Agregar">
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 card" style="width: 18rem;" *ngFor="let producto of aProductos">
+                <img src={{producto.imagen}} width="100" height="250" class="card-img-top" alt={{producto.nombre}}>
+                <div class="card-body">
+                    <h5 class="card-title">{{producto.nombre}}</h5>
+                    <p class="card-text">{{producto.descripcion}}</p>
+                    <p class="card-text">Costo: $ {{producto.precio}}</p>
+                    <input class="btn btn-primary" type="button" value="Eliminar" (click)="eliminarProducto(producto)">
+                    <ng-template #contenido let-modal>
+                      <div class="modal-header">
+                        <h4 class="modal-title">Editar producto</h4>
+                        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="">Descripción</label>
+                            <input type="text" class="form-control" aria-describedby="usuario">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="">Precio</label>
+                            <input type="text" class="form-control" aria-describedby="email">
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="actualizarProducto(producto)">Guardar</button>
+                        <button type="button" class="btn btn-success" (click)="modal.close()">Ok!</button>
+                      </div>
+                    </ng-template>
+                    <button type="button" class="btn btn-primary" (click)="modal.open(contenido)">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
