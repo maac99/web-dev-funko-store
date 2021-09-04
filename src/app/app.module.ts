@@ -10,6 +10,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { SesionComponent } from './sesion/sesion.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HistorialComprasComponent } from './historial-compras/historial-compras
     SesionComponent,
     ReporteComponent,
     HistorialComprasComponent,
+    HomeComponent,
   ],
   imports: [
     FormsModule,

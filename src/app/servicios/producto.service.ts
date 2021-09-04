@@ -5,6 +5,7 @@ import { Producto } from '../Modelo/producto';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductoService {
   public funkos: Lista<Producto> = new Lista<Producto>();
   public aFunkos: Producto[] = [];

@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, Inject, NgModule, OnInit } from '@angular/core';
 import { Producto } from '../Modelo/producto';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
@@ -14,7 +14,7 @@ export class AdminComponent {
   public funkoNuevo: Producto = new Producto("",0,"","", false);
   public des: string = "";
   public precio: number = 0;
-  constructor(public modalEdit: NgbModal, public modalAdd: NgbModal,  private router: Router, public _productoService: ProductoService) {}
+  constructor(public modalEdit: NgbModal, public modalAdd: NgbModal,  private router: Router, @Inject(ProductoService) public _productoService : ProductoService) {}
 
   ngOnInit(): void {
   }
