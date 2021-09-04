@@ -10,11 +10,11 @@ import { UsuarioService } from '../servicios/usuario.service';
   styleUrls: ['./sesion.component.css']
 })
 export class SesionComponent implements OnInit {
-  
+
   public email: string ="";
   public psw: string = "";
-  
-  constructor(public _usuarioService: UsuarioService) { 
+
+  constructor(public _usuarioService: UsuarioService) {
   }
 
 public verificarUsuario(email: string, psw: string){
@@ -24,9 +24,11 @@ public verificarUsuario(email: string, psw: string){
         this._usuarioService.iniciado = true;
         this.email = email;
         this.psw = psw;
+        localStorage.setItem('user',usuario.email);
         alert("Inició sesión satisfactoriamente.");
+      }else{
+        alert("Contraseña incorrecta.");
       }
-      alert("Contraseña incorrecta.");
     }
   }
   if(this._usuarioService.iniciado == false){
@@ -34,8 +36,7 @@ public verificarUsuario(email: string, psw: string){
   }
 }
 
-  formSubmit()
-  {
+  formSubmit(){
     this.verificarUsuario(this.email, this.psw);
   }
 

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserAuthGuard implements CanActivate {
   canActivate() {
-    var user = localStorage.getItem('user');
+    let user = localStorage.getItem('user');
     if(!user){
       return false;
     }

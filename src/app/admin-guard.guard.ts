@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AdminAuthGuard implements CanActivate {
   canActivate() {
-    var admin = localStorage.getItem('admin');
+    let admin = localStorage.getItem('admin');
     if(!admin){
       return false;
     }
