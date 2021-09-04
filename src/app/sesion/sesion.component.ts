@@ -1,5 +1,6 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from '../Modelo/usuario';
 import { RegistroComponent } from '../registro/registro.component';
 import { UsuarioService } from '../servicios/usuario.service';
@@ -14,7 +15,7 @@ export class SesionComponent implements OnInit {
   public email: string ="";
   public psw: string = "";
 
-  constructor(public _usuarioService: UsuarioService) {
+  constructor(public _usuarioService: UsuarioService, public router: Router) {
   }
 
 public verificarUsuario(email: string, psw: string){
@@ -27,6 +28,7 @@ public verificarUsuario(email: string, psw: string){
         this._usuarioService.usuarioL = usuario;
         localStorage.setItem('user',usuario.email);
         alert("Inició sesión satisfactoriamente.");
+        this.router.navigateByUrl("/home");
       }else{
         alert("Contraseña incorrecta.");
       }

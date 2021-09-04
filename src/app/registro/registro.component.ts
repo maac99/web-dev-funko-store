@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Lista } from '../Modelo/lista';
+import { Router, RouterLink } from '@angular/router';
 import { Usuario } from '../Modelo/usuario';
-import { Venta } from '../Modelo/venta';
 import { UsuarioService } from '../servicios/usuario.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { UsuarioService } from '../servicios/usuario.service';
 export class RegistroComponent implements OnInit {
 
   public usuarioN: Usuario = new Usuario("","","","",false);
-  constructor(public _usuarioService: UsuarioService) {
+  constructor(public _usuarioService: UsuarioService, private router: Router) {
 
   }
 
@@ -21,6 +20,7 @@ export class RegistroComponent implements OnInit {
   formSubmit(){
     this._usuarioService.agregarUsuario(this.usuarioN.nombre, this.usuarioN.apellido, this.usuarioN.email, this.usuarioN.psw, false);
     this.usuarioN = new Usuario("","","","",false);
+    this.router.navigateByUrl("/sesion");
   }
 
   ngOnInit(): void {
