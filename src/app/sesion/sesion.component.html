@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
+    <title>FunkoStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="sesion.component.css">
+
+</head>
+
+<form (ngSubmit)="formSubmit()">
+    <h1 class="text-center">INICIO DE SESIÓN</h1>
+    <p>
+        Ingresa tu correo y tu contraseña.
+    </p>
+    <label for="Email">Email: </label>
+    <input type="email" class="form-control" name="Email" id="Email" placeholder="ejemplo@ejemplo.com"
+        [(ngModel)]="email">
+
+    <label for="Contrasena">Contraseña: </label>
+    <input type="text" class="form-control" name="psw" id="psw" placeholder="*****"
+        [(ngModel)]="psw">
+
+    <input type="submit" value="Iniciar sesión" class="btn btn-success">
+</form>>

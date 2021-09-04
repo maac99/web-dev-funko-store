@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
+    <title>FunkoStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="registro.component.css">
+
+</head>
+
+<form (ngSubmit)="formSubmit()">
+    <h1 class="text-center">REGISTRO</h1>
+    <p>
+        Ingresa los siguientes datos para poder registrarte y poder comprar nuestros funkos.
+    </p>
+    <label for="Nombre" >Nombre: </label>
+    <input type="text" class="form-control" name="Nombre" id="Nombre" placeholder="Nombre"
+        [(ngModel)]="usuarioN.nombre">
+    <label for="Apellido">Apellido: </label>
+    <input type="text" class="form-control" name="Apellido" id="Apellido" placeholder="Apellido"
+        [(ngModel)]="usuarioN.apellido">
+
+    <br><br>
+
+    <label for="Email">Email: </label>
+    <input type="email" class="form-control" name="Email" id="Email" placeholder="ejemplo@ejemplo.com"
+        [(ngModel)]="usuarioN.email">
+
+    <label for="Contrasena">Contraseña: </label>
+    <input type="text" class="form-control" name="psw" id="psw" placeholder="*****"
+        [(ngModel)]="usuarioN.psw">
+
+    <br><br>
+
+    <label for="cliente">Cliente: </label>
+    <input type="radio" class="form-control" id="cliente" value="Cliente" name="admin">
+    <label for="admin">Administrador: </label>
+    <input type="radio" class="form-control" id="admin" value="Administrador" name="admin">
+
+    <input type="submit" value="Registrarse" class="btn btn-success">
+</form>>

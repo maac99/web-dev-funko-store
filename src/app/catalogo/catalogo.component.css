@@ -1,0 +1,14 @@
+button{
+    align-content: center ;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    width: 100px;
+    border: 1px solid #555;
+    position: fixed;
+}
+
+.card{
+    align-items: center;
+}
