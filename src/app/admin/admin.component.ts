@@ -2,6 +2,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { Producto } from '../Modelo/producto';
 import { Lista } from '../Modelo/lista';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -13,7 +14,7 @@ export class AdminComponent {
   public productos: Lista<Producto> = new Lista<Producto>();
   public aProductos: Producto[] = [];
 
-  constructor(public modalEdit: NgbModal, public modalAdd: NgbModal) {
+  constructor(public modalEdit: NgbModal, public modalAdd: NgbModal,  private router: Router) {
 
     var funko1 = new Producto("Aang", 80000, "https://drive.google.com/file/d/1ZevmhD6YUyyCa0TYN113eBj07D4R-u7e/view?usp=sharing", "Avatar: La leyenda de Aang", false);
     var funko2 = new Producto("Katara", 7000, "https://drive.google.com/file/d/1jXwO_qI3mLRD-UDeHqRBjBr2U2DkQ3Nu/view?usp=sharing", "Avatar: La leyenda de Aang", false);
@@ -65,6 +66,10 @@ export class AdminComponent {
   public eliminarProducto(prod: Producto){
     this.productos.eliminar(prod);
     this.aProductos = this.productos.obtenerlista();
+  }
+
+  public verReportes(){
+    this.router.navigateByUrl("/admin/reporte");
   }
 
 }
