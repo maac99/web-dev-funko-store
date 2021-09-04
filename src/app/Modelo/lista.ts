@@ -9,4 +9,9 @@ export class Lista<T> {
       return this._lista;
   }
 
+  eliminar(dato: T){
+    const index = this._lista.indexOf(dato);
+    this._lista.splice(index, 1);
+  }
+
 }

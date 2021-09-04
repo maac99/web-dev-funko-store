@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { RegistroComponent } from './registro/registro.component';
 import { SesionComponent } from './sesion/sesion.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { SesionComponent } from './sesion/sesion.component';
     CatalogoComponent,
     RegistroComponent,
     SesionComponent,
+    ReporteComponent,
+    HistorialComprasComponent,
   ],
   imports: [
     FormsModule,
