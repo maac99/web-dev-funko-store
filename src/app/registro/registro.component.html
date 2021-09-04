@@ -53,9 +53,9 @@
     <br><br>
 
     <label for="cliente">Cliente: </label>
-    <input type="radio" class="form-control" id="cliente" value="Cliente" name="admin">
+    <input type="radio" class="form-check-input" id="cliente" value="false" name="admin" [(ngModel)]="usuarioN.admin">
     <label for="admin">Administrador: </label>
-    <input type="radio" class="form-control" id="admin" value="Administrador" name="admin">
+    <input type="radio" class="form-check-input" id="admin" value="true" name="admin" [(ngModel)]="usuarioN.admin">
 
     <input type="submit" value="Registrarse" class="btn btn-success">
     <a routerLink="/sesion">Iniciar sesión</a>
