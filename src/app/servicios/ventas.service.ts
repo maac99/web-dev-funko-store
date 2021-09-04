@@ -23,7 +23,7 @@ export class VentasService {
     carrito.push(item1);
     carrito.push(item2);
 
-    let v = new Venta("12/09",carrito, user, 12134);
+    let v = new Venta("12/09",carrito, user);
 
     this.ventas.agregar(v);
 
