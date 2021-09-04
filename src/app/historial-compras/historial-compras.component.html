@@ -1,1 +1,55 @@
-<p>historial-compras works!</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.">
+  <title>FunkoStore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel ="stylesheet" href="historial-compras.component.css">
+
+</head>
+
+<body>
+  <h1 class="text-center">Mis Compras</h1>
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 card" style="width: 18rem;" *ngFor="let venta of this._ventasService.aVentas">
+              <div class="card-body">
+                  <h5 class="card-title">{{venta.fecha}}</h5>
+                  <p class="card-text">Costo: $ {{venta.totalVenta}}</p>
+                  <ng-template #contenidoDetalle let-modal>
+                    <div class="modal-header">
+                      <h4 class="modal-title">Compra {{venta.fecha}}</h4>
+                      <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <thead>
+                        <tr>
+                          <th scope="col">Producto</th>
+                          <th scope="col">Descripcion</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Valor</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of venta.carrito">
+                          <td>{{item.producto.nombre}}</td>
+                          <td>{{item.producto.descripcion}}</td>
+                          <td>{{item.cantidad}}</td>
+                          <td>{{item.precioUnitario}}</td>
+                        </tr>
+                      </tbody>
+                    </div>
+                    <div class="modal-footer">
+                      <p>Total de la compra: {{venta.totalVenta}}</p>
+                    </div>
+                  </ng-template>
+                  <button type="button" class="btn btn-primary" (click)="modalDetail.open(contenidoDetalle)">Ver más</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+

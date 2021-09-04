@@ -10,16 +10,15 @@ import { UsuarioService } from '../servicios/usuario.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  
+
   public usuarioN: Usuario = new Usuario("","","","",false);
-  constructor(public _usuarioService: UsuarioService) { 
-    
+  constructor(public _usuarioService: UsuarioService) {
+
   }
 
-  
 
-  formSubmit()
-  {
+
+  formSubmit(){
     this._usuarioService.agregarUsuario(this.usuarioN.nombre, this.usuarioN.apellido, this.usuarioN.email, this.usuarioN.psw, false);
     this.usuarioN = new Usuario("","","","",false);
   }

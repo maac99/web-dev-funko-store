@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Venta } from '../Modelo/venta';
+import { VentasService } from '../servicios/ventas.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-historial-compras',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistorialComprasComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _ventasService : VentasService, public modalDetail: NgbModal) { }
+
+  verDetalle(venta: Venta){
+
+  }
+
 
   ngOnInit(): void {
   }
