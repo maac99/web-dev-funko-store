@@ -24,6 +24,7 @@ public verificarUsuario(email: string, psw: string){
         this._usuarioService.iniciado = true;
         this.email = email;
         this.psw = psw;
+        this._usuarioService.usuarioL = usuario;
         localStorage.setItem('user',usuario.email);
         alert("Inició sesión satisfactoriamente.");
       }else{
