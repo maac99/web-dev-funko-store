@@ -24,6 +24,7 @@ public verificarUsuario(email: string, psw: string){
         this._usuarioService.iniciado = true;
         this.email = email;
         this.psw = psw;
+        this._usuarioService.usuarioL = usuario;
         alert("Inició sesión satisfactoriamente.");
       }
       alert("Contraseña incorrecta.");

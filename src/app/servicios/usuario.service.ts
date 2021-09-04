@@ -47,4 +47,7 @@ export class UsuarioService {
     }  
   }
 
+  public agregarCompra(venta:Venta){
+    this.usuarioL.compras.push(venta);
+  }
 }
