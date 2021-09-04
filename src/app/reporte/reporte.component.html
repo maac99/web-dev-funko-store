@@ -1,0 +1,16 @@
+<thead>
+<tr>
+  <th>Venta</th>
+  <th>Fecha</th>
+  <th>Cliente</th>
+  <th>Valor</th>
+</tr>
+</thead>
+
+<tbody>
+<tr *ngFor="let venta of ventas">
+  <td>{{venta.fecha}}</td>
+  <td>{{venta.usuario.nombre}}</td>
+  <td>{{venta.totalVenta}}</td>
+</tr>
+</tbody>
