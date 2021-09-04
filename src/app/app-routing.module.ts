@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from "./admin/admin.component";
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
+import { HomeComponent } from './home/home.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { SesionComponent } from './sesion/sesion.component';
@@ -14,6 +15,7 @@ const Routes = [
   {path: 'sesion', component: SesionComponent},
   {path: 'admin/reporte', component: ReporteComponent},
   {path: 'misCompras', component: HistorialComprasComponent},
+  {path: 'home', component: HomeComponent},
 ];
 
 

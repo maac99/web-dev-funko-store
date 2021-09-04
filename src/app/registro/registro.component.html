@@ -10,6 +10,25 @@
 </head>
 
 <form (ngSubmit)="formSubmit()">
+    <nav class="navbar navbar-expand-lg navbar-light" style=" background-color: whitesmoke;">
+        <div class="container-fluid">
+            <span class="navbar-brand" id="logo">
+                <img src="https://imgur.com/aw5L4z0.png" width="120" height="80">
+            </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/home">Inicio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <h1 class="text-center">REGISTRO</h1>
     <p>
         Ingresa los siguientes datos para poder registrarte y poder comprar nuestros funkos.
@@ -39,4 +58,5 @@
     <input type="radio" class="form-control" id="admin" value="Administrador" name="admin">
 
     <input type="submit" value="Registrarse" class="btn btn-success">
-</form>>
+    <a routerLink="/sesion">Iniciar sesión</a>
+</form>

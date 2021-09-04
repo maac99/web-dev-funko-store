@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -5,11 +7,11 @@
     <title>FunkoStore</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="sesion.component.css">
+    <link rel="stylesheet" href="home.component.css">
 
 </head>
 
-<form (ngSubmit)="formSubmit()">
+<body>
     <nav class="navbar navbar-expand-lg navbar-light" style=" background-color: whitesmoke;">
         <div class="container-fluid">
             <span class="navbar-brand" id="logo">
@@ -25,22 +27,30 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" routerLink="/home">Inicio</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/catalogo">Catálogo</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" aria-current="page" routerLink="/historial-compras">Mis compras</a>
                 </ul>
             </div>
         </div>
     </nav>
-    <h1 class="text-center">INICIO DE SESIÓN</h1>
-    <p>
-        Ingresa tu correo y tu contraseña.
-    </p>
-    <label for="Email">Email: </label>
-    <input type="email" class="form-control" name="Email" id="Email" placeholder="ejemplo@ejemplo.com"
-        [(ngModel)]="email">
+    <ul>
+        <li>
+            <a routerLink="/sesion">Iniciar sesión</a>
+        </li>
+        <li>
+            <a href="/registro">Registrarse</a>
+        </li>
+    </ul>
+    <h2>Bienvenido a FunkoStore</h2>
+    <p>Aquí podrás encontrar una gran variedad de funkos con diferentes precios, esperamos te gusten mucho.</p>
 
-    <label for="Contrasena">Contraseña: </label>
-    <input type="text" class="form-control" name="psw" id="psw" placeholder="*****"
-        [(ngModel)]="psw">
-
-    <input type="submit" value="Iniciar sesión" class="btn btn-success">
-    <a href="/registro">Registrarse</a>
-</form>>
+    <p>Si le das en 'Catálogo' en la barra de navegación podrás ver todos nuestros productos, lo único que debes hacer
+        es añadir al carrito, si deseas de un mismo modelo más de una unidad solo debes volver a añadir al carrito.</p>
+    <p>En la parte derecha de esa pantalla podrás ver todo lo que contiene tu carrito y lo único que debes hacer es
+        darle al botón comprar y eso es todo.</p>
+    <p>Si deseas ver tus compras realizadas solo debes dirigirte a la barra de navegación y darle a 'Mis compras'.</p>
+    
+</body>
