@@ -22,8 +22,8 @@
     </ul>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 card" style="width: 18rem;" *ngFor="let funko of aFunkos">
-                <img src={{funko.imagen}} width="100" height="250" class="card-img-top" alt={{funko.nombre}}>
+            <div class="col-12 col-md-6 col-lg-4 card" style="width: 18rem;" *ngFor="let funko of _productoService.aFunkos">
+                <img [src]="funko.imagen" width="100" height="250" class="card-img-top" alt ={{funko.nombre}}>
                 <div class="card-body">
                     <h5 class="card-title">{{funko.nombre}}</h5>
                     <p class="card-text">{{funko.descripcion}}</p>

@@ -8,3 +8,7 @@ ul{
     border: 1px solid #555;
     position: fixed;
 }
+
+.card{
+    align-items: center;
+}
