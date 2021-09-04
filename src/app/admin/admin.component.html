@@ -1,5 +1,3 @@
-!DOCTYPE html>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +10,39 @@
 </head>
 
 <body>
-    <h1 class="text-center">CATÁLOGO</h1>
-    <ul>
-        <input class="btn btn-primary" type="button" value="Agregar">
-    </ul>
+    <h1 class="text-center">EDITAR CATÁLOGO</h1>
+    <button type="button" class="btn btn-primary" (click)="modalAdd.open(contenidoAdd)">Agregar Producto</button>
+    <ng-template #contenidoAdd let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Agregar producto</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div #precio class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control" aria-describedby="nombre" >
+          </div>
+          <div #des class="form-group">
+            <label for="">Descripción</label>
+            <input type="text" class="form-control" aria-describedby="descripcion">
+          </div>
+          <div #precio class="form-group">
+            <label for="">Precio</label>
+            <input type="text" class="form-control" aria-describedby="precio">
+          </div>
+          <div #url class="form-group">
+            <label for="">URL Imagen</label>
+            <input type="text" class="form-control" aria-describedby="imagen">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success">Crear</button>
+      </div>
+    </ng-template>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 card" style="width: 18rem;" *ngFor="let producto of aProductos">
@@ -24,7 +51,7 @@
                     <h5 class="card-title">{{producto.nombre}}</h5>
                     <p class="card-text">{{producto.descripcion}}</p>
                     <p class="card-text">Costo: $ {{producto.precio}}</p>
-                    <input class="btn btn-primary" type="button" value="Eliminar" (click)="eliminarProducto(producto)">
+                    <button type="button" class="btn btn-danger" (click)="eliminarProducto(producto)">Eliminar</button>
                     <ng-template #contenido let-modal>
                       <div class="modal-header">
                         <h4 class="modal-title">Editar producto</h4>
@@ -34,23 +61,21 @@
                       </div>
                       <div class="modal-body">
                         <form>
-                          <div class="form-group">
+                          <div #nDes class="form-group">
                             <label for="">Descripción</label>
                             <input type="text" class="form-control" aria-describedby="usuario">
                           </div>
-
-                          <div class="form-group">
+                          <div #nPrecio class="form-group">
                             <label for="">Precio</label>
                             <input type="text" class="form-control" aria-describedby="email">
                           </div>
                         </form>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" (click)="actualizarProducto(producto)">Guardar</button>
-                        <button type="button" class="btn btn-success" (click)="modal.close()">Ok!</button>
+                        <button type="button" class="btn btn-success" (click)="actualizarProducto(producto)">Guardar</button>
                       </div>
                     </ng-template>
-                    <button type="button" class="btn btn-primary" (click)="modal.open(contenido)">Editar</button>
+                    <button type="button" class="btn btn-primary" (click)="modalEdit.open(contenido)">Editar</button>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { Producto } from '../Modelo/producto';
 import { Lista } from '../Modelo/lista';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -12,9 +12,8 @@ export class AdminComponent {
 
   public productos: Lista<Producto> = new Lista<Producto>();
   public aProductos: Producto[] = [];
-  durationInSeconds = 5;
 
-  constructor(public modal: NgbModal) {
+  constructor(public modalEdit: NgbModal, public modalAdd: NgbModal) {
 
     var funko1 = new Producto("Aang", 80000, "https://drive.google.com/file/d/1ZevmhD6YUyyCa0TYN113eBj07D4R-u7e/view?usp=sharing", "Avatar: La leyenda de Aang", false);
     var funko2 = new Producto("Katara", 7000, "https://drive.google.com/file/d/1jXwO_qI3mLRD-UDeHqRBjBr2U2DkQ3Nu/view?usp=sharing", "Avatar: La leyenda de Aang", false);
@@ -54,11 +53,13 @@ export class AdminComponent {
   }
 
   //CRUD de productos
-  public crearProducto(prod: Producto){
-    this.productos.agregar(prod);
+  public crearProducto(nombre: string, descr:string, precio:number, url:string){
+    this.modalAdd.dismissAll();
+    //this.productos.agregar(prod);
   }
 
   public actualizarProducto(prod: Producto){
+    this.modalEdit.dismissAll();
   }
 
   public eliminarProducto(prod: Producto){
