@@ -15,10 +15,10 @@ export class CatalogoComponent {
   public fotito: string = "https://imgur.com/p27Dttz.png";
   public carritoSeleccionado: Item[] = [];
   constructor(public _productoService: ProductoService, public _usuarioService: UsuarioService, public _ventasService: VentasService) {
-  
+
   }
   public agregarItem(prod:Producto, canti:number){
-    var nuevo:boolean = true; 
+    var nuevo:boolean = true;
     for(let agregado of this.carritoSeleccionado)
     {
       if(agregado.producto.nombre === prod.nombre)
@@ -36,8 +36,8 @@ export class CatalogoComponent {
   }
   public comprarItems(){
     var venta = new Venta("04/09/2021", this.carritoSeleccionado, this._usuarioService.usuarioL);
-    this._usuarioService.agregarCompra(venta);
-    this._ventasService.agregarVenta(venta);
+    //this._usuarioService.agregarCompra(venta);
+    //this._ventasService.agregarVenta(venta);
     alert("Compra exitosa: \n \n" + "Nombre: " + this._usuarioService.usuarioL.nombre + "\n \n Dinero pagado: " + venta.totalVenta);
   }
 
