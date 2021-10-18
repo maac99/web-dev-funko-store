@@ -4,6 +4,7 @@ export class Producto {
   public activo:boolean = true;
 
   constructor(
+    public id: number,
     public nombre: string,
     public precio: number,
     public imagen: string,
