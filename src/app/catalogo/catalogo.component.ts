@@ -13,10 +13,11 @@ import { VentasService } from '../servicios/ventas.service';
 })
 export class CatalogoComponent {
   public fotito: string = "https://imgur.com/p27Dttz.png";
+  public productos: Producto [] = [];
   public carritoSeleccionado: Item[] = [];
-  constructor(public _productoService: ProductoService, public _usuarioService: UsuarioService, public _ventasService: VentasService) {
 
-  }
+  constructor(public _productoService: ProductoService, public _usuarioService: UsuarioService, public _ventasService: VentasService) { }
+
   public agregarItem(prod:Producto, canti:number){
     var nuevo:boolean = true;
     for(let agregado of this.carritoSeleccionado)
@@ -41,7 +42,17 @@ export class CatalogoComponent {
     alert("Compra exitosa: \n \n" + "Nombre: " + this._usuarioService.usuarioL.nombre + "\n \n Dinero pagado: " + venta.totalVenta);
   }
 
+  public llenarCatalogo(){
+    this._productoService.getProductos().subscribe(
+    results => (this.productos = results),
+    error => {
+      console.log(error)
+    });
+  }
+
   ngOnInit(): void {
+    this.llenarCatalogo();
+    console.log(this.productos.length);
   }
 
 }

@@ -11,6 +11,8 @@ import { SesionComponent } from './sesion/sesion.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

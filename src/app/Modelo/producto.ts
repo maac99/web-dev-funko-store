@@ -11,4 +11,5 @@ export class Producto {
     public descripcion: string,
     public editar: boolean
   ) {}
+
 }

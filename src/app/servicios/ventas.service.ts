@@ -20,7 +20,7 @@ export class VentasService {
   }*/
 
   consultarVentasByDate(fecha:number):Observable<any>{
-    let url = "http://localhost:8080/ventas/getVentasFecha" + fecha
+    let url = "http://localhost:8080/ventas/reporte/" + fecha + "/1/10"
     return this.http.get<any>(url);
   }
 }
